@@ -1,5 +1,6 @@
 #include<iostream>
 #include<queue>
+#include<vector>
 using namespace std;
 
 class node{
@@ -80,6 +81,7 @@ class node{
       queue<node*> q;
       q.push(root);
       q.push(NULL);
+      vector<int>v;
 
       while(!q.empty())
       {
@@ -96,6 +98,7 @@ class node{
            }
            else{
           cout<< temp->data << " ";
+          v.push_back(temp->data);
 
             if(temp->left) {
 
@@ -107,6 +110,12 @@ class node{
            }
            }        
       }
+
+      cout<<"vector value"<<endl;
+      for(auto i:v){
+         cout<<i <<" ";
+      }
+      cout<<endl;
         
    }
 
@@ -147,7 +156,8 @@ int main()
     node* root = NULL;
 
   root = buildTree(root);
- //1 2 4 -1 -1 5 -1 -1 3 6 -1 -1 7 -1 -1 
+  //1 2 4 -1 -1 5 -1 -1 3 6 -1 -1 7 -1 -1 
+ 
  // levelOrderTravarsal(root);
 /* 
  cout<<"Inorder Travarsal "<<endl;
@@ -166,8 +176,8 @@ postorder(root);
 */
 
 // buildFromeLevelOrder(root);
-// levelOrderTravarsal(root);
-preorder(root);
+levelOrderTravarsal(root);
+//preorder(root);
 
 }
 
